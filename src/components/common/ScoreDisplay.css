@@ -1,0 +1,28 @@
+.score-display {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  color: white;
+  margin-bottom: 0.5rem;
+  background: var(--gradient-primary);
+}
+
+.score-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.score-display:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}

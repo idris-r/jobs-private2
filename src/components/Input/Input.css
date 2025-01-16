@@ -1,0 +1,138 @@
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.input-group {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.input-group:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.input-group textarea {
+  background-color: var(--bg-tertiary);
+}
+
+.file-upload-container {
+  margin-bottom: 1rem;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-button {
+  background: var(--gradient-primary) !important;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.upload-button:hover {
+  border-color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.upload-button .upload-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.upload-button .upload-text {
+  font-weight: 500;
+  color: white;
+}
+
+.file-name {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 0.75rem;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-name svg {
+  width: 16px;
+  height: 16px;
+}
+
+.analyse-button {
+  position: relative;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.analyse-button .primary {
+  height: 48px;
+  padding: 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.analyse-button .primary.complete {
+  background: var(--gradient-success) !important;
+}
+
+.analyse-button .primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  width: 0%;
+  transition: width 0.3s ease;
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}

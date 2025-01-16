@@ -1,0 +1,13 @@
+.actionable-items-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.actionable-content {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}

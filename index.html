@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self' https://*.stripe.com;
+                   script-src 'self' https://*.stripe.com 'unsafe-inline' 'unsafe-eval';
+                   style-src 'self' 'unsafe-inline';
+                   img-src 'self' data: https://*.stripe.com;
+                   frame-src 'self' https://*.stripe.com;
+                   connect-src 'self' https://*.stripe.com http://localhost:* ws://localhost:*;
+                   font-src 'self' data:;">
+    
+    <!-- Cross-Origin Headers -->
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="cross-origin">
+    
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/" defer crossorigin="anonymous"></script>
+    
+    <!-- Primary Meta Tags -->
+    <title>CV & Job Matcher</title>
+    <meta name="description" content="AI-powered CV and job matching platform">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg">
+    
+    <!-- Preconnect to Stripe -->
+    <link rel="preconnect" href="https://js.stripe.com">
+    <link rel="preconnect" href="https://api.stripe.com">
+    
+    <!-- Prevent auto-zoom on inputs in iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Stripe Loading Check -->
+    <script>
+      window.stripeLoaded = false;
+      document.querySelector('script[src*="stripe.com"]').addEventListener('load', function() {
+        window.stripeLoaded = true;
+        console.log('Stripe.js loaded successfully');
+      });
+    </script>
+    
+    <!-- Error Handling -->
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.filename && e.filename.includes('stripe.com')) {
+          console.error('Stripe.js loading error:', e);
+        }
+      });
+    </script>
+  </body>
+</html>
